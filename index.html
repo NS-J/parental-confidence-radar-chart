@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Smoothed D3.js Radar Chart</title>
+
+		<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+		</style>
+	
+	</head>
+  
+ <!-- Radar chart design created by Nadieh Bremer - VisualCinnamon.com -->
+ 
+	<body>
+
+		<div class="radarChart"></div>
+
+		<script src="radarChart.js"></script>	
+    <script>
+      var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+        
+        <!-- data -->
+        
+        var data = [
+					  [//TimeStamp 1
+						{axis:"I am confident about feeding my child.",value:},
+						{axis:"I can settle my child.",value:},
+						{axis:"I am confident about helping my child to establish a good sleep routine.",value:},
+						{axis:"I know what to do when my child cries.",value:},
+						{axis:"I understand what my child is trying to tell me.",value:},
+						{axis:"I can soothe/calm my child when he/she is distressed.",value:},
+						{axis:"I am confident about playing with my child.",value:},
+						{axis:"If my child feels unwell, I am confident about handling this.",value:},
+            {axis:"I feel sure that me and my partner can support each other when needed.",value:},
+            {axis:"I am confident that my child is doing well.",value:},
+            {axis:"I can make decisions about the care of my child.",value:},
+            {axis:"I do not find being a parent stressful.",value:},
+            {axis:"I feel I am doing a good job as a parent.",value:}
+            {axis:"Other people think I am doing a good job as a parent.",value:}
+            {axis:"I feel that people will be there for me when I need support.",value:}
+					  ],[//Timestamp 2
+						{axis:"I am confident about feeding my child.",value:},
+						{axis:"I can settle my child.",value:},
+						{axis:"I am confident about helping my child to establish a good sleep routine.",value:},
+						{axis:"I know what to do when my child cries.",value:},
+						{axis:"I understand what my child is trying to tell me.",value:},
+						{axis:"I can soothe/calm my child when he/she is distressed.",value:},
+						{axis:"I am confident about playing with my child.",value:},
+						{axis:"If my child feels unwell, I am confident about handling this.",value:},
+            {axis:"I feel sure that me and my partner can support each other when needed.",value:},
+            {axis:"I am confident that my child is doing well.",value:},
+            {axis:"I can make decisions about the care of my child.",value:},
+            {axis:"I do not find being a parent stressful.",value:},
+            {axis:"I feel I am doing a good job as a parent.",value:}
+            {axis:"Other people think I am doing a good job as a parent.",value:}
+            {axis:"I feel that people will be there for me when I need support.",value:}
+					  ],[//Timestamp 3
+            {axis:"I am confident about feeding my child.",value:},
+						{axis:"I can settle my child.",value:},
+						{axis:"I am confident about helping my child to establish a good sleep routine.",value:},
+						{axis:"I know what to do when my child cries.",value:},
+						{axis:"I understand what my child is trying to tell me.",value:},
+						{axis:"I can soothe/calm my child when he/she is distressed.",value:},
+						{axis:"I am confident about playing with my child.",value:},
+						{axis:"If my child feels unwell, I am confident about handling this.",value:},
+            {axis:"I feel sure that me and my partner can support each other when needed.",value:},
+            {axis:"I am confident that my child is doing well.",value:},
+            {axis:"I can make decisions about the care of my child.",value:},
+            {axis:"I do not find being a parent stressful.",value:},
+            {axis:"I feel I am doing a good job as a parent.",value:}
+            {axis:"Other people think I am doing a good job as a parent.",value:}
+            {axis:"I feel that people will be there for me when I need support.",value:}
+            ]
+          ];
+          
+          var color = d3.scale.ordinal()
+				.range(["#EDC951","#CC333F","#00A0B0"]);
+				
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 0.5,
+			  levels: 5,
+			  roundStrokes: true,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart(".radarChart", data, radarChartOptions);
+		</script>
+	</body>
+</html>
